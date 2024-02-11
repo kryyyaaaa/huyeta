@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<script>
+function showpage(pg) {
+    document.getElementById("main").style.display = "none";
+    document.getElementById("news").style.display = "none";
+    document.getElementById(pg).style.display = "block";
+}
+</script>
+<html>
+  <div id="main">
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+      body, html {
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        font: Arial 14px;
+        background: #a585ff
+      }
+      .text {
+        color: white; 
+        font-size: 18px; 
+        font-family: monospace;
+        margin-left: 35%; 
+        margin-top: 1%
+      }
+      .text1 {
+        color: white;
+        font-size: 12px; 
+        margin-left: 2%; 
+        font-family: monospace; 
+        margin-top:1%;
+      }
+            .butt {
+        margin-top:4%;
+        color:#3982ff;
+        background:rgba(250,250,250,.78);
+        width:35%;
+        height:60px;
+        margin-left:10%;
+        border:none;
+        border-radius:20px;
+      }
+       #butt_up {
+        margin-top:4%;
+        color:#3982ff;
+        background:rgba(250,250,250,.78);
+        width:80%;
+        height:60px;
+        margin-left:10%;
+        border:none;
+        border-radius:20px;
+         margin-bottom:2px;
+      }
+    </style>
+    <script>
+    function hell() {
+      alert("jj")
+      showpage("news")
+    }
+    </script>
+  </head>
+  <body>
+    <div class="text">
+      /\ Ssskrilll
+    </div>
+    <div class="text">
+      \/ Beta 1.0
+    </div>
+    <button class="butt" id="butt_up" onclick="hell()">
+      Перейти к новостям
+    </button>
+    <button class="butt" id="butt_up">
+      hello2
+    </button>
+    <div class="text1">
+      jhhhgghhhggg
+    </div>
+  </body>
+  </div>
+  <div id="news">
+    hello
+  </div>
+</html>
+<script>
+showpage("main")
+</script>
