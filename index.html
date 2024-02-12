@@ -1,92 +1,195 @@
 <!DOCTYPE html>
-<script>
-function showpage(pg) {
-    document.getElementById("main").style.display = "none";
-    document.getElementById("news").style.display = "none";
-    document.getElementById(pg).style.display = "block";
-}
-</script>
-<html>
-  <div id="main">
-  <head>
-    <meta name="viewport" content="width=320, initial-scale=1">
-    <meta charset="utf-8">
+<html lang="en" style="--tg-viewport-height: 100vh; --tg-viewport-stable-height: 100vh;"><head>
+    <meta charset="UTF-8">
+    <title>Swiftgram Content settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="MobileOptimized" content="176">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="apple-itunes-app" content="app-id=6471879502">
+    <meta name="telegram:channel" content="@swiftgram">
     <style>
-      body, html {
-        min-width: 100%;
-        min-height: 100%;
-        margin: 0;
-        padding: 0;
-        font: Arial 14px;
-        background: #a585ff
-      }
-      .text {
-        color: white; 
-        font-size: 18px; 
-        font-family: monospace;
-        margin-left: 35%; 
-        margin-top: 1%
-      }
-      .text1 {
-        color: white;
-        font-size: 12px; 
-        margin-left: 2%; 
-        font-family: monospace; 
-        margin-top:1%;
-      }
-            .butt {
-        margin-top:4%;
-        color:#3982ff;
-        background:rgba(250,250,250,.78);
-        width:35%;
-        height:60px;
-        margin-left:10%;
-        border:none;
-        border-radius:20px;
-      }
-       #butt_up {
-        margin-top:4%;
-        color:#3982ff;
-        background:rgba(250,250,250,.78);
-        width:80%;
-        height:60px;
-        margin-left:10%;
-        border:none;
-        border-radius:20px;
-         margin-bottom:2px;
-      }
+        html {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        body {
+            font-family: var(--default-font);
+            --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-weight: 400;
+            background-color: #f2f2f7;
+            margin: 0;
+            padding: 20px;
+
+
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: default;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .settings-container {
+            background-color: #fff;
+            /* background-color: #fff; */
+            border-radius: 10px;
+            /* Apply rounded corners to the container */
+            /* margin-bottom: 20px; */
+            overflow: hidden;
+            /* Ensures that child elements do not overflow the rounded corners */
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 15px;
+            border-bottom: 1px solid #c7c7cc;
+            min-height: 31px;
+        }
+
+        .setting-item:last-of-type {
+            border-bottom: none;
+            /* Remove bottom border from last setting item */
+        }
+
+        .setting-title {
+            font-size: 17px;
+            color: #000;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 51px;
+            height: 31px;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ddd;
+            transition: .4s;
+            border-radius: 31px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 27px;
+            width: 27px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+
+        input:checked+.slider {
+            background-color: #4cd964;
+        }
+
+        input:focus+.slider {
+            outline: none;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(20px);
+        }
+
+        .section-header {
+            padding: 20px 15px 5px 15px;
+            font-size: 13px;
+            background-color: #f2f2f7;
+            color: #8e8e93;
+        }
+
+        .setting-note {
+            padding: 5px 15px 20px 15px;
+            font-size: 13px;
+            color: #8e8e93;
+            background-color: #f2f2f7;
+        }
     </style>
+    
+</head>
+
+<body>
+
+    <div class="section-header">SENSITIVE CONTENT</div>
+    <div class="settings-container">
+        <div class="setting-item">
+            <div class="setting-title">Show sensitive content</div>
+            <label class="toggle-switch">
+                <input type="checkbox" data-setting-name="disable_filtering" id="snt">
+                <span class="slider"></span>
+            </label>
+            
+        </div>
+    </div>
+    <div class="setting-note">
+        Show potentially sensitive media in public Telegram channels via <a href="sg://">Swiftgram</a>
+    </div>
+
+    <div class="section-header">SENSITIVE CONTENT</div>
+    <div class="settings-container">
+        <div class="setting-item">
+            <div class="setting-title">Face ID lock sensitive channles</div>
+            <label class="toggle-switch">
+                <input type="checkbox" data-setting-name="disable_filtering" id="sntc">
+                <span class="slider"></span>
+            </label>
+            
+        </div>
+    </div>
+    <div class="setting-note">
+        Open senstive channels with Face ID
+    </div>
+<div class="section-header">SAVE SETTINGS</div>
+    <div class="settings-container">
+        <div class="setting-item">
+            <div class="setting-title" onclick="save()">Save settings (just click on this text)</div>
+          </div>
+      </div>
+  <div class="setting-note">
+        Our links: <a href="sg://resolve?domain=kryyaasoft">Swiftgram</a>, <a href="tg://resolve?domain=kryyaasoft">Telegram</a>
+    </div>
     <script>
-    function hell() {
-      alert("jj")
-      showpage("news")
-    }
-    </script>
-  </head>
-  <body>
-    <div class="text">
-      /\ Ssskrilll
-    </div>
-    <div class="text">
-      \/ Beta 1.0
-    </div>
-    <button class="butt" id="butt_up" onclick="hell()">
-      Перейти к новостям
-    </button>
-    <button class="butt" id="butt_up">
-      hello2
-    </button>
-    <div class="text1">
-      возможно в скором времени тут будет чат / новостной паблик я хз честно
-    </div>
-  </body>
-  </div>
-  <div id="news">
-    <div class="text1">
-        чо смотришь а? 
-    </div>
-  </div>
-</html>
-<script>
-showpage("main")
-</script>
+      var checkbox = document.getElementById("snt");
+      var faceid = document.getElementById("sntc"); 
+      
+      function save() {
+  if (checkbox.checked) {
+    var content = 'enabled'
+  } else {
+    var content = 'disabled'
+  }
+  if (faceid.checked) {
+    var face = 'enabled'
+  } else {
+    var face = 'disabled'
+  }
+        var ttd = confirm('Show sensitive content: ' + content + '\nLock face ID: ' + face +'\n\nContinue?')
+        if (ttd) {
+          alert('Setting applied.')
+        } }
+  </script>
+
+</body></html>
